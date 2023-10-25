@@ -1,4 +1,5 @@
 var timeout;
+const moveToModuleIcon = document.getElementById('iconset');
 
 const scroll = new LocomotiveScroll({
   el: document.querySelector("#main"),
@@ -67,7 +68,7 @@ function circleMouseFollower(xscale, yscale) {
 
 circleChaptaKaro();
 circleMouseFollower();
-// firstPageAnim();
+firstPageAnim();
 
 // teeno element ko sleect karo, uske baad teeno par ek mousemove lagao, jab mousemove ho to ye pata karo ki mouse kaha par hai, jiska matlab hai mouse ki x and y position pata karo, ab mouse ki x y position ke badle us image ko show karo and us image ko move karo, move karte waqt rotate karo, and jaise jaise mouse tez chale waise waise rotation bhi tez ho jaye
 
@@ -96,3 +97,12 @@ document.querySelectorAll(".elem").forEach(function (elem) {
     });
   });
 });
+
+function intoView(element) {
+  element.scrollIntoView({behavior: "smooth"});
+}
+
+moveToModuleIcon.addEventListener('click', function() {
+  const moveToSection = document.getElementById('second');
+  intoView(moveToSection);
+})
